@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <title>ticTacToe</title>
+    <script defer src="assets/script.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="reset"><button id="btn" type="reset">RESET</button></div>
+      <h2 id="heading">TIC-TAC-TOE</h2>
+      <h3 id="info">
+        Player ⭕ vs Player ❌<br />
+        Tap and Play
+      </h3>
+    </header>
+
+    <main>
+      <table id="tab">
+        <tbody>
+          <tr>
+            <td class="cell-11">
+              <p id="pid-11"></p>
+              <button type="button" onclick="press(11)" class="btn btn-11">
+                <!-- <h1>💠</h1> -->
+              </button>
+            </td>
+            <td class="cell-12">
+              <p id="pid-12"></p>
+              <button type="button" onclick="press(12)" class="btn btn-12">
+                <!-- <h1>💠</h1> -->
+              </button>
+            </td>
+            <td class="cell-13">
+              <p id="pid-13"></p>
+              <button type="button" onclick="press(13)" class="btn btn-13">
+                <!-- <h1>💠</h1> -->
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td class="cell-21">
+              <p id="pid-21"></p>
+              <button type="button" onclick="press(21)" class="btn btn-21">
+                <!-- <h1>💠</h1> -->
+              </button>
+            </td>
+            <td class="cell-22">
+              <p id="pid-22"></p>
+              <button type="button" onclick="press(22)" class="btn btn-22">
+                <!-- <h1>💠</h1> -->
+              </button>
+            </td>
+            <td class="cell-23">
+              <p id="pid-23"></p>
+              <button type="button" onclick="press(23)" class="btn btn-23">
+                <!-- <h1>💠</h1> -->
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td class="cell-31">
+              <p id="pid-31"></p>
+              <button type="button" onclick="press(31)" class="btn btn-31">
+                <!-- <h1>💠</h1> -->
+              </button>
+            </td>
+            <td class="cell-32">
+              <p id="pid-32"></p>
+              <button type="button" onclick="press(32)" class="btn btn-32">
+                <!-- <h1>💠</h1> -->
+              </button>
+            </td>
+            <td class="cell-33">
+              <p id="pid-33"></p>
+              <button type="button" onclick="press(33)" class="btn btn-33">
+                <!-- <h1>💠</h1> -->
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div id="result" class="hidden"></div>
+    </main>
+  </body>
+</html>

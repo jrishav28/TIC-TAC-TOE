@@ -1,0 +1,269 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background: linear-gradient(0.25turn, #6c858f, #91ad7a, #856b64);
+}
+main {
+  display: flex;
+  justify-content: center;
+}
+header {
+  margin: 2% 40%;
+}
+.reset {
+  position: absolute;
+  right: 15%;
+}
+#btn {
+  background-color: rgb(206, 62, 62);
+  color: rgb(220, 217, 223);
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: sans-serif;
+  padding: 10%;
+  width: auto;
+  border-radius: 8%;
+}
+#btn:hover {
+  background-color: black;
+}
+h2 {
+  font-family: cursive;
+  font-size: xx-large;
+  padding: 2%;
+  font-weight: 800;
+  background-color: rgb(12, 12, 12);
+  width: 100%;
+  color: rgb(70, 162, 165);
+  text-align: center;
+  border: 20px solid rgb(126, 99, 100);
+}
+h3 {
+  width: 110%;
+  background-color: ivory;
+  border: 1px solid ivory;
+  border-radius: 30px;
+  text-align: center;
+  font-family: inherit;
+}
+
+table {
+  margin: 0%;
+  padding: 0%;
+  background-color: black;
+  table-layout: fixed;
+
+  height: 600px;
+  width: 600px;
+  border: 4px solid #7eca5b;
+
+  border-radius: 10px;
+  box-sizing: border-box;
+  border-collapse: separate;
+}
+p {
+  font-size: 20px;
+  position: absolute;
+  top: 21%;
+  left: 35%;
+  align-content: center;
+}
+#result {
+  border: 5px solid rgba(82, 150, 110, 0.651);
+  background: linear-gradient(0.25turn, #252627, #494b48, #554f4d);
+  background: blur;
+  width: fit-content;
+  padding: inherit;
+  color: rgb(243, 243, 243);
+  text-align: center;
+  padding: 2%;
+  position: absolute;
+  font-size: 150%;
+  font-family: cursive;
+  font-weight: 800;
+  margin: 23% 29%;
+  z-index: 1;
+}
+.hidden {
+  display: none;
+}
+td {
+  padding: 0%;
+  margin: 0%;
+  height: 30%;
+  width: 30%;
+  background-color: ivory;
+  position: relative;
+  font-size: xx-large;
+  border-radius: 0%;
+  border-collapse: separate;
+  border: 1px solid rgb(1, 19, 16);
+}
+button {
+  background-color: inherit;
+}
+.btn:hover {
+  background: radial-gradient(
+    circle,
+    rgba(183, 200, 221, 1) 29%,
+    rgba(171, 206, 225, 1) 35%,
+    rgba(170, 207, 225, 1) 37%,
+    rgba(157, 212, 230, 1) 59%,
+    rgba(156, 212, 230, 1) 63%,
+    rgba(148, 216, 233, 0.7030049013287833) 92%
+  );
+}
+
+@media only screen and (max-width: 600px) {
+  h2 {
+    width: max-content;
+    border: 10px ridge rgb(190, 133, 136);
+    font-size: x-small;
+  }
+  h3 {
+    font-size: xx-small;
+  }
+  table {
+    width: 350px;
+    height: 350px;
+  }
+  button {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+  p {
+    position: absolute;
+    top: -60%;
+    left: 8%;
+    font-size: 150%;
+  }
+}
+@media only screen and (min-width: 600px) {
+  h2 {
+    min-width: max-content;
+    border: 5px ridge rgb(190, 133, 136);
+    font-size: large;
+  }
+
+  h3 {
+    font-size: x-small;
+  }
+
+  table {
+    width: 350px;
+    height: 350px;
+  }
+
+  button {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+  p {
+    position: absolute;
+    top: -60%;
+    left: 8%;
+    font-size: 220%;
+  }
+  #result {
+    margin: 23% 29%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  h2 {
+    font-size: large;
+    border: 10px ridge rgb(170, 99, 110);
+  }
+  h3 {
+    font-size: small;
+  }
+  table {
+    width: 450px;
+    height: 450px;
+  }
+
+  button {
+    padding: 0%;
+    height: 100%;
+    width: 100%;
+  }
+  td {
+    border: 5px;
+    color: ivory;
+  }
+  .reset {
+    margin-right: 5%;
+    width: fit-content;
+  }
+  p {
+    position: absolute;
+    top: -65%;
+    left: 5%;
+    font-size: 300%;
+  }
+  #result {
+    position: absolute;
+    margin: 25% 30%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  h2 {
+    border: 15px ridge rgb(190, 133, 136);
+    font-size: x-large;
+  }
+  h3 {
+    font-size: large;
+  }
+  table {
+    width: 500px;
+    height: 500px;
+  }
+  button {
+    height: 100%;
+    width: 100%;
+  }
+
+  p {
+    position: absolute;
+    top: -70%;
+    left: 4%;
+    font-size: 350%;
+  }
+  #result {
+    position: absolute;
+    margin: 20% 29%;
+    font-size: 200%;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  table {
+    width: 550px;
+    height: 550px;
+  }
+  button {
+    height: 100%;
+    width: 100%;
+  }
+  p {
+    position: absolute;
+    top: -72%;
+    left: 2%;
+    font-size: 400%;
+  }
+  .reset {
+    margin-right: 13%;
+  }
+  #btn {
+    padding: 10%;
+    width: max-content;
+    font-size: 1.3rem;
+  }
+  #result {
+    position: absolute;
+    margin: 13% 29%;
+    font-size: 220%;
+  }
+}
