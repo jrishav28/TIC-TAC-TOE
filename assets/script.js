@@ -1,6 +1,5 @@
 "use strict";
 
-console.log("play");
 let count = 1;
 const aa = document.getElementById("pid-11");
 const ab = document.getElementById("pid-12");
@@ -15,12 +14,20 @@ const cc = document.getElementById("pid-33");
 const reset = document.querySelector(".reset");
 const result = document.querySelector("#result");
 const tab = document.querySelector("#tab");
+const player = document.querySelectorAll(".player");
+const player0 = document.querySelector(".player0");
+const playerX = document.querySelector(".playerX");
+const arrow = document.querySelectorAll(".arrow");
+const arrow0 = document.querySelector(".arrow-0");
+const arrowX = document.querySelector(".arrow-X");
 
-const cross = "❌";
 const round = "⭕";
+const cross = "❌";
 let z = "";
 
 const press = function (cellNum) {
+  player.forEach((player) => player.classList.toggle("active-player"));
+  arrow.forEach((arrow) => arrow.classList.toggle("active-arrow"));
   let a = `pid-${cellNum}`;
   let b = `btn-${cellNum}`;
 
@@ -36,10 +43,7 @@ const press = function (cellNum) {
   if (count > 5) checkWinner(z);
 };
 
-// const draw = function () {
-//   console.log("draw");
-// };
-
+// check winner
 function checkWinner(z) {
   if (
     (aa.innerHTML == z && bb.innerHTML == z && cc.innerHTML == z) ||
@@ -53,6 +57,7 @@ function checkWinner(z) {
     (aa.innerHTML == z && bb.innerHTML == z && cc.innerHTML == z)
   ) {
     reset_game();
+    document.querySelectorAll(".btn").forEach((btn) => (btn.disabled = true));
     winner(`${z}`);
   } else if (count === 10) {
     alert(" oh it's a tie ❗❗❗");
@@ -60,34 +65,44 @@ function checkWinner(z) {
   }
 }
 
-///display winner
+//display winner
 const display_winner = function (sym) {
   result.classList.remove("hidden");
   result.innerHTML = `player ${sym} won 🎉`;
-  tab.style.opacity = 0.2;
-  // document.querySelector("#result").style.opacity = 1;
+  document.querySelector("main").style.opacity = 0;
   console.log("result", sym);
 };
 
-///timer for result
+//timer for result
 const winner = function (sym) {
   const timer = setTimeout(function () {
     display_winner(sym);
-  }, 500);
+  }, 100);
 };
 
-///reset buttun implementation
+//reset buttun implementation
 const reset_game = function () {
   count = 1;
-  document.querySelectorAll("p").forEach((p) => (p.innerHTML = ""));
+  document.querySelectorAll(".pid").forEach((p) => (p.innerHTML = ""));
   result.classList.add("hidden");
   result.innerHTML = "";
-  tab.style.opacity = 1;
+  document.querySelector("main").style.opacity = 1;
+  document.querySelectorAll(".btn").forEach((btn) => (btn.disabled = false));
+  player0.classList.add("active-player");
+  playerX.classList.remove("active-player");
+  arrow0.classList.add("active-arrow");
+  arrowX.classList.remove("active-arrow");
 };
 
-/// call  reset_game() on click
+// call  reset_game() on click
 reset.addEventListener("click", function () {
   reset_game();
 });
 
-// play();
+// arrow blinking
+const arrowEffect = function () {
+  setInterval(() => {
+    arrow.forEach((arrow) => arrow.classList.toggle("visibility"));
+  }, 250);
+};
+arrowEffect();
