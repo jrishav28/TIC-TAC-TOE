@@ -7,13 +7,55 @@ body {
 main {
   display: flex;
   justify-content: center;
+  align-content: center;
 }
 header {
   margin: 2% 40%;
 }
+.player {
+  align-self: center;
+  color: rgb(22, 22, 22);
+  display: flex;
+  align-content: center;
+  font-family: cursive;
+  border-radius: 3%;
+  font-size: 2.5rem;
+  opacity: 0.2;
+  transition: all 0.5s;
+}
+
+.arrow {
+  font-size: 3rem;
+  align-self: center;
+  opacity: 0;
+}
+
+.visibility {
+  visibility: hidden;
+}
+
+.active-arrow,
+.active-player {
+  opacity: 1;
+}
+
+.display_result {
+  display: flex;
+  justify-content: center;
+}
+
 .reset {
   position: absolute;
   right: 15%;
+}
+
+.highlight {
+  transform: scale(1.2, 1.5) skewX(-15deg);
+  background: linear-gradient(0.5turn, #1c2019, #f6f8f7, #1c2019);
+}
+
+#turn {
+  transition: ease-in-out;
 }
 #btn {
   background-color: rgb(206, 62, 62);
@@ -38,9 +80,11 @@ h2 {
   color: rgb(70, 162, 165);
   text-align: center;
   border: 20px solid rgb(126, 99, 100);
+  transition: all 0.8s;
 }
+
 h3 {
-  width: 110%;
+  width: 100%;
   background-color: ivory;
   border: 1px solid ivory;
   border-radius: 30px;
@@ -61,33 +105,37 @@ table {
   border-radius: 10px;
   box-sizing: border-box;
   border-collapse: separate;
+  transition: all 0.75s;
 }
-p {
+
+.pid {
   font-size: 20px;
   position: absolute;
   top: 21%;
   left: 35%;
   align-content: center;
 }
+
 #result {
-  border: 5px solid rgba(82, 150, 110, 0.651);
+  border: 5px solid rgb(48, 153, 92);
   background: linear-gradient(0.25turn, #252627, #494b48, #554f4d);
   background: blur;
   width: fit-content;
-  padding: inherit;
   color: rgb(243, 243, 243);
   text-align: center;
-  padding: 2%;
+  padding: 2% 13%;
   position: absolute;
+  top: 35%;
   font-size: 150%;
   font-family: cursive;
   font-weight: 800;
-  margin: 23% 29%;
   z-index: 1;
 }
+
 .hidden {
   display: none;
 }
+
 td {
   padding: 0%;
   margin: 0%;
@@ -103,6 +151,7 @@ td {
 button {
   background-color: inherit;
 }
+
 .btn:hover {
   background: radial-gradient(
     circle,
@@ -117,7 +166,6 @@ button {
 
 @media only screen and (max-width: 600px) {
   h2 {
-    width: max-content;
     border: 10px ridge rgb(190, 133, 136);
     font-size: x-small;
   }
@@ -133,16 +181,32 @@ button {
     height: 100%;
     width: 100%;
   }
-  p {
+  .pid {
     position: absolute;
     top: -60%;
     left: 8%;
     font-size: 150%;
   }
+  .player0 {
+    margin-right: 3%;
+  }
+  .playerX {
+    margin-left: 3%;
+  }
+  #result {
+    transform: scale(1.2, 1.2) skewX(-15deg);
+  }
+
+  .arrow {
+    font-size: 2rem;
+  }
+  .highlight {
+    transform: scale(1, 1) skewX(-15deg);
+  }
 }
 @media only screen and (min-width: 600px) {
   h2 {
-    min-width: max-content;
+    /* min-width: max-content; */
     border: 5px ridge rgb(190, 133, 136);
     font-size: large;
   }
@@ -161,14 +225,28 @@ button {
     height: 100%;
     width: 100%;
   }
-  p {
+  .pid {
     position: absolute;
     top: -60%;
     left: 8%;
     font-size: 220%;
   }
   #result {
-    margin: 23% 29%;
+    transform: scale(1.3, 1.5) skewX(-15deg);
+    top: 35%;
+  }
+  .player0 {
+    margin-right: 3%;
+  }
+  .playerX {
+    margin-left: 3%;
+  }
+
+  .arrow {
+    font-size: 2.5rem;
+  }
+  .highlight {
+    transform: scale(1.3, 1.5) skewX(-15deg);
   }
 }
 @media only screen and (min-width: 768px) {
@@ -197,15 +275,34 @@ button {
     margin-right: 5%;
     width: fit-content;
   }
-  p {
+  .pid {
     position: absolute;
     top: -65%;
     left: 5%;
     font-size: 300%;
   }
   #result {
-    position: absolute;
-    margin: 25% 30%;
+    padding: 1% 10%;
+    top: 44%;
+  }
+  .player0 {
+    margin-right: 7%;
+  }
+  .playerX {
+    margin-left: 7%;
+  }
+
+  .arrow {
+    font-size: 3rem;
+  }
+  .highlight {
+    transform: scale(1.7, 1.7) skewX(-15deg);
+  }
+  .player0 {
+    margin-right: 4%;
+  }
+  .playerX {
+    margin-left: 4%;
   }
 }
 
@@ -226,16 +323,27 @@ button {
     width: 100%;
   }
 
-  p {
+  .pid {
     position: absolute;
     top: -70%;
     left: 4%;
     font-size: 350%;
   }
   #result {
-    position: absolute;
-    margin: 20% 29%;
-    font-size: 200%;
+    transform: scale(2, 2) skewX(-15deg);
+  }
+  .highlight {
+    transform: scale(2.4, 2.4) skewX(-15deg);
+  }
+  .player0 {
+    margin-right: 8%;
+  }
+  .playerX {
+    margin-left: 8%;
+  }
+
+  .arrow {
+    font-size: 5rem;
   }
 }
 @media only screen and (min-width: 1200px) {
@@ -247,7 +355,7 @@ button {
     height: 100%;
     width: 100%;
   }
-  p {
+  .pid {
     position: absolute;
     top: -72%;
     left: 2%;
@@ -262,8 +370,21 @@ button {
     font-size: 1.3rem;
   }
   #result {
-    position: absolute;
-    margin: 13% 29%;
-    font-size: 220%;
+    top: 54%;
+
+    font-size: 2.1rems;
+  }
+  .player0 {
+    margin-right: 8%;
+  }
+  .playerX {
+    margin-left: 8%;
+  }
+
+  .arrow {
+    font-size: 5rem;
+  }
+  .highlight {
+    transform: scale(3.5, 3.5) skewX(-15deg);
   }
 }
