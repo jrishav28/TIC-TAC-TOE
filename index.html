@@ -19,71 +19,105 @@
     </header>
 
     <main>
+      <div class="player player0 active-player">
+        <p class="highlight">⭕</p>
+        <!-- id="turn" -->
+      </div>
+      <div class="arrow arrow-0 active-arrow">
+        <p>⬅</p>
+      </div>
       <table id="tab">
         <tbody>
           <tr>
             <td class="cell-11">
-              <p id="pid-11"></p>
-              <button type="button" onclick="press(11)" class="btn btn-11">
-                <!-- <h1>💠</h1> -->
-              </button>
+              <p class="pid" id="pid-11"></p>
+              <button
+                type="button"
+                onclick="press(11)"
+                class="btn btn-11"
+              ></button>
             </td>
             <td class="cell-12">
-              <p id="pid-12"></p>
-              <button type="button" onclick="press(12)" class="btn btn-12">
-                <!-- <h1>💠</h1> -->
-              </button>
+              <p class="pid" id="pid-12"></p>
+              <button
+                type="button"
+                onclick="press(12)"
+                class="btn btn-12"
+              ></button>
             </td>
             <td class="cell-13">
-              <p id="pid-13"></p>
-              <button type="button" onclick="press(13)" class="btn btn-13">
-                <!-- <h1>💠</h1> -->
-              </button>
+              <p class="pid" id="pid-13"></p>
+              <button
+                type="button"
+                onclick="press(13)"
+                class="btn btn-13"
+              ></button>
             </td>
           </tr>
           <tr>
             <td class="cell-21">
-              <p id="pid-21"></p>
-              <button type="button" onclick="press(21)" class="btn btn-21">
-                <!-- <h1>💠</h1> -->
-              </button>
+              <p class="pid" id="pid-21"></p>
+              <button
+                type="button"
+                onclick="press(21)"
+                class="btn btn-21"
+              ></button>
             </td>
             <td class="cell-22">
-              <p id="pid-22"></p>
-              <button type="button" onclick="press(22)" class="btn btn-22">
-                <!-- <h1>💠</h1> -->
-              </button>
+              <p class="pid" id="pid-22"></p>
+              <button
+                type="button"
+                onclick="press(22)"
+                class="btn btn-22"
+              ></button>
             </td>
             <td class="cell-23">
-              <p id="pid-23"></p>
-              <button type="button" onclick="press(23)" class="btn btn-23">
-                <!-- <h1>💠</h1> -->
-              </button>
+              <p class="pid" id="pid-23"></p>
+              <button
+                type="button"
+                onclick="press(23)"
+                class="btn btn-23"
+              ></button>
             </td>
           </tr>
           <tr>
             <td class="cell-31">
-              <p id="pid-31"></p>
-              <button type="button" onclick="press(31)" class="btn btn-31">
-                <!-- <h1>💠</h1> -->
-              </button>
+              <p class="pid" id="pid-31"></p>
+              <button
+                type="button"
+                onclick="press(31)"
+                class="btn btn-31"
+              ></button>
             </td>
             <td class="cell-32">
-              <p id="pid-32"></p>
-              <button type="button" onclick="press(32)" class="btn btn-32">
-                <!-- <h1>💠</h1> -->
-              </button>
+              <p class="pid" id="pid-32"></p>
+              <button
+                type="button"
+                onclick="press(32)"
+                class="btn btn-32"
+              ></button>
             </td>
             <td class="cell-33">
-              <p id="pid-33"></p>
-              <button type="button" onclick="press(33)" class="btn btn-33">
-                <!-- <h1>💠</h1> -->
-              </button>
+              <p class="pid" id="pid-33"></p>
+              <button
+                type="button"
+                onclick="press(33)"
+                class="btn btn-33"
+              ></button>
             </td>
           </tr>
         </tbody>
       </table>
-      <div id="result" class="hidden"></div>
+      <div class="arrow arrow-X">
+        <p>➡</p>
+      </div>
+      <div class="player playerX">
+        <p class="highlight">❌</p>
+      </div>
     </main>
+
+    <div class="display_result">
+      <p id="result" class="hidden"></p>
+    </div>
   </body>
 </html>
