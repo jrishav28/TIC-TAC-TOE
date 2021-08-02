@@ -9,8 +9,13 @@
     <script defer src="assets/script.js"></script>
   </head>
   <body>
-    <header>
-      <div class="reset"><button id="btn" type="reset">RESET</button></div>
+    <header class="hidden">
+      <div class="newGame">
+        <button id="btn" type="button" disabled>New Game</button>
+      </div>
+      <div class="reset">
+        <button id="btn" type="reset" disabled>RESET</button>
+      </div>
       <h2 id="heading">TIC-TAC-TOE</h2>
       <h3 id="info">
         Player ⭕ vs Player ❌<br />
@@ -26,84 +31,52 @@
       <div class="arrow arrow-0 active-arrow">
         <p>⬅</p>
       </div>
+      <!-- onclick="press(11)" -->
       <table id="tab">
         <tbody>
           <tr>
             <td class="cell-11">
               <p class="pid" id="pid-11"></p>
-              <button
-                type="button"
-                onclick="press(11)"
-                class="btn btn-11"
-              ></button>
+
+              <button type="button" data-cell="11" class="btn btn-11"></button>
             </td>
             <td class="cell-12">
               <p class="pid" id="pid-12"></p>
-              <button
-                type="button"
-                onclick="press(12)"
-                class="btn btn-12"
-              ></button>
+
+              <button type="button" data-cell="12" class="btn btn-12"></button>
             </td>
             <td class="cell-13">
               <p class="pid" id="pid-13"></p>
-              <button
-                type="button"
-                onclick="press(13)"
-                class="btn btn-13"
-              ></button>
+              <button type="button" data-cell="13" class="btn btn-13"></button>
             </td>
           </tr>
           <tr>
             <td class="cell-21">
               <p class="pid" id="pid-21"></p>
-              <button
-                type="button"
-                onclick="press(21)"
-                class="btn btn-21"
-              ></button>
+              <button type="button" data-cell="21" class="btn btn-21"></button>
             </td>
             <td class="cell-22">
               <p class="pid" id="pid-22"></p>
-              <button
-                type="button"
-                onclick="press(22)"
-                class="btn btn-22"
-              ></button>
+              <button type="button" data-cell="22" class="btn btn-22"></button>
             </td>
             <td class="cell-23">
               <p class="pid" id="pid-23"></p>
-              <button
-                type="button"
-                onclick="press(23)"
-                class="btn btn-23"
-              ></button>
+              <button type="button" data-cell="23" class="btn btn-23"></button>
             </td>
           </tr>
           <tr>
             <td class="cell-31">
               <p class="pid" id="pid-31"></p>
-              <button
-                type="button"
-                onclick="press(31)"
-                class="btn btn-31"
-              ></button>
+              <button type="button" data-cell="31" class="btn btn-31"></button>
             </td>
             <td class="cell-32">
               <p class="pid" id="pid-32"></p>
-              <button
-                type="button"
-                onclick="press(32)"
-                class="btn btn-32"
-              ></button>
+              <button type="button" data-cell="32" class="btn btn-32"></button>
             </td>
             <td class="cell-33">
               <p class="pid" id="pid-33"></p>
-              <button
-                type="button"
-                onclick="press(33)"
-                class="btn btn-33"
-              ></button>
+
+              <button type="button" data-cell="33" class="btn btn-33"></button>
             </td>
           </tr>
         </tbody>
@@ -118,6 +91,34 @@
 
     <div class="display_result">
       <p id="result" class="hidden"></p>
+    </div>
+    <div class="starter">
+      <form>
+        <label for="name-player0"> PLAYER 0</label>
+        <br />
+        <input
+          type="text"
+          placeholder="enter name..."
+          id="name-player0"
+          name="name-player0"
+          required
+        />
+        <br />
+        <p></p>
+        <label for="name-playerx"> PLAYER X</label>
+        <br />
+        <input
+          type="text"
+          placeholder="enter name..."
+          id="name-playerX"
+          name="name-playerX"
+          required
+        />
+        <button type="button" class="play">PLAY</button>
+      </form>
+    </div>
+    <div class="start-title">
+      <h1 id="start-title">TIC-TAC-TOE</h1>
     </div>
   </body>
 </html>
