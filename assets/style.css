@@ -5,6 +5,7 @@ body {
   background: linear-gradient(0.25turn, #6c858f, #91ad7a, #856b64);
 }
 main {
+  opacity: 0;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -45,6 +46,7 @@ header {
 }
 
 .reset {
+  background-color: rgb(206, 62, 62);
   position: absolute;
   right: 15%;
 }
@@ -52,24 +54,41 @@ header {
 .highlight {
   transform: scale(1.2, 1.5) skewX(-15deg);
   background: linear-gradient(0.5turn, #1c2019, #f6f8f7, #1c2019);
+  border-radius: 10%;
 }
 
 #turn {
   transition: ease-in-out;
 }
 #btn {
-  background-color: rgb(206, 62, 62);
   color: rgb(220, 217, 223);
   font-size: 1rem;
   font-weight: 600;
   font-family: sans-serif;
   padding: 10%;
-  width: auto;
+  width: max-content;
   border-radius: 8%;
+  cursor: pointer;
 }
 #btn:hover {
   background-color: black;
 }
+.newGame {
+  background-color: rgb(29, 25, 25);
+  position: absolute;
+  left: 15%;
+  border-radius: 10%;
+}
+
+.reset:active {
+  transform: translate(-5%, 3px);
+  box-shadow: 0 1rem 1rem rgba(47, 45, 45, 0.171);
+}
+
+.btn:active {
+  border: 5px ridge rgba(117, 77, 77, 0.596);
+}
+
 h2 {
   font-family: cursive;
   font-size: xx-large;
@@ -79,10 +98,31 @@ h2 {
   width: 100%;
   color: rgb(70, 162, 165);
   text-align: center;
-  border: 20px solid rgb(126, 99, 100);
+  border: 20px solid rgb(29, 25, 25);
   transition: all 0.8s;
 }
-
+.start-title {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 20%;
+  position: absolute;
+  top: 2%;
+  /* text-align: center; */
+}
+h1 {
+  padding: 1rem;
+  align-self: center;
+  font-family: cursive;
+  font-size: xx-large;
+  font-weight: 800;
+  color: rgb(238, 235, 231);
+  background: rgba(4, 27, 8, 0.438);
+  box-shadow: 0 8px 32px 0 rgba(150, 202, 176, 0.678);
+  backdrop-filter: blur(40px);
+  border-radius: 100px;
+  border: 3px solid rgba(207, 133, 133, 0.801);
+}
 h3 {
   width: 100%;
   background-color: ivory;
@@ -130,6 +170,57 @@ table {
   font-family: cursive;
   font-weight: 800;
   z-index: 1;
+}
+.starter {
+  display: block;
+  position: absolute;
+  top: 30%;
+  left: 15%;
+}
+form input {
+  width: 80%;
+  height: 2rem;
+  color: #ee0e06;
+  font-size: 1.2rem;
+
+  background-color: rgba(17, 17, 17, 0.911);
+  border-radius: 2%;
+  border: rgb(182, 25, 25);
+}
+form {
+  display: block;
+  color: rgb(253, 249, 249);
+  width: 130%;
+  font-family: cursive;
+  font-weight: 900;
+  height: 130%;
+  line-height: 2rem;
+  letter-spacing: 0.2rem;
+  padding: 1.5rem 1.5rem 0rem;
+  /* border: 10px solid chartreuse;
+  background-color: bisque; */
+  background: rgba(19, 0, 0, 0.308);
+  box-shadow: 0 8px 32px 0 rgba(139, 81, 81, 0.664);
+  backdrop-filter: blur(40px);
+  border-radius: 30px;
+  border: 5px solid rgba(207, 133, 133, 0.801);
+  /* border-radius: 20px; */
+}
+.play {
+  padding: 0.3rem 0.5rem;
+  width: fit-content;
+  font-size: 1.2rem;
+  font-weight: 800;
+  font-family: inherit;
+  color: rgb(253, 251, 251);
+  /* background-color: rgb(240, 116, 116); */
+  background: linear-gradient(0.25turn, #010b0c8a, #082e35c5);
+  margin: 5% 35%;
+  cursor: pointer;
+  border-radius: 30%;
+}
+.play:hover {
+  background: linear-gradient(0.25turn, #0c2d33de, #65838be7);
 }
 
 .hidden {
@@ -183,8 +274,8 @@ button {
   }
   .pid {
     position: absolute;
-    top: -60%;
-    left: 8%;
+    top: -25%;
+    left: 10%;
     font-size: 150%;
   }
   .player0 {
@@ -224,6 +315,10 @@ button {
     display: block;
     height: 100%;
     width: 100%;
+  }
+  .starter {
+    top: 35%;
+    left: 22%;
   }
   .pid {
     position: absolute;
@@ -271,15 +366,24 @@ button {
     border: 5px;
     color: ivory;
   }
+  .starter {
+    top: 40%;
+    left: 27%;
+  }
   .reset {
     margin-right: 5%;
     width: fit-content;
   }
+
   .pid {
     position: absolute;
     top: -65%;
     left: 5%;
     font-size: 300%;
+  }
+  .starter {
+    top: 40%;
+    left: 32%;
   }
   #result {
     padding: 1% 10%;
@@ -329,6 +433,10 @@ button {
     left: 4%;
     font-size: 350%;
   }
+  .starter {
+    top: 45%;
+    left: 35%;
+  }
   #result {
     transform: scale(2, 2) skewX(-15deg);
   }
@@ -363,6 +471,14 @@ button {
   }
   .reset {
     margin-right: 13%;
+  }
+  .starter {
+    top: 40%;
+    left: 39%;
+    /* margin: 35% 35%; */
+  }
+  .newGame {
+    left: 25%;
   }
   #btn {
     padding: 10%;
